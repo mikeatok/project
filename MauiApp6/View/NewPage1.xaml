@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:View="clr-namespace:MauiApp6.View"
+             xmlns:Viewmodel="clr-namespace:MauiApp6.Viewmodel"
+             x:Class="MauiApp6.View.NewPage1"
+             Title="List of cars"
+         BackgroundColor="Black"
+             >
+
+    <ContentPage.BindingContext>
+        <Viewmodel:Communityviewmodel/>
+    </ContentPage.BindingContext>
+
+
+
+    <CollectionView ItemsSource="{Binding Vehicles}" Margin=" 16">
+
+        <CollectionView.ItemTemplate>
+            <DataTemplate >
+
+
+
+
+
+
+
+
+                <Border
+                     Margin="10,10,10,10"
+                   Padding="20"
+                   MinimumHeightRequest="0"
+                    MinimumWidthRequest="100"
+                   
+                    BackgroundColor="#2A2A2A"
+                    >
+
+
+                    <Grid RowDefinitions="auto, auto,*,auto">
+                        
+                            <Button
+                             Grid.Row="3"
+                             Text="Delete"
+                             FontSize="Small"
+                             Grid.Column="3"
+                             MaximumWidthRequest="100"
+                               TextColor="White"
+                               BackgroundColor="#2A2A2A"
+                                VerticalOptions="Center"
+                                FontAttributes="Bold">
+                            </Button>
+                        <Button
+                               Grid.Row="1"
+                               Text="Add"
+                               FontSize="Small"
+                               MaximumWidthRequest="80"
+                               Grid.Column="1"
+                             VerticalOptions="End"
+                            FontAttributes="Bold"
+                            Padding="20"
+                               TextColor="White"
+                               BackgroundColor="#2A2A2A">
+                        </Button>
+
+
+                        <Image Grid.ColumnSpan="2" 
+                         Source="{Binding Imageurl}"
+                         MaximumHeightRequest="1000"
+                         MaximumWidthRequest="800"/>
+
+
+                        <Grid ColumnDefinitions="auto, auto,*,auto"
+                              Grid.Row="1">
+                            <Label Grid.Column="1"
+                               Text="{Binding Make}"    
+                               VerticalOptions="End"
+                                    FontSize="Large"
+                                   FontAttributes="Italic,Bold"
+                                   Margin="8,0,8,0"
+                                   
+                                />
+                            <Label Grid.Column="2"
+                                    Text="{Binding Model}"
+                                    VerticalOptions="End"
+                                    Margin=" 8,0,8,0"
+                                   FontSize="Large"
+                                   FontAttributes="Italic,Bold"
+                                   
+                                />
+
+
+
+
+
+                        </Grid>
+                        
+                    </Grid>
+                </Border>
+            </DataTemplate>
+        </CollectionView.ItemTemplate>
+    </CollectionView>
+    
+</ContentPage >
+
+
+
+
+
+
+
